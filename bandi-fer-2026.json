@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "name": "Bandi FER Sardegna 2026 — official parameters",
+  "version": "1.0.0",
+  "last_update": "2026-04-29",
+  "source": "Regione Autonoma Sardegna — Programma Operativo FESR 2021-2027, asse Transizione Energetica",
+  "language": "it",
+
+  "stanziamento_complessivo_eur": 100000000,
+  "currency": "EUR",
+  "tipo": "fondo_perduto_a_fondo_perduto",
+
+  "contributo_percentuale": {
+    "microimprese": 0.65,
+    "PMI": 0.50,
+    "grandi_imprese": null
+  },
+
+  "spesa_massima_ammissibile_eur": 500000,
+
+  "tipologie_finanziabili": [
+    {
+      "id": "FV_aziendale",
+      "label": "Fotovoltaico aziendale 6-100 kWp",
+      "kwp_min": 6,
+      "kwp_max": 100,
+      "note": "Per impianti oltre 100 kWp interviene regime SSP più articolato o passaggio CER"
+    },
+    {
+      "id": "accumulo_LiFePO4",
+      "label": "Accumulo elettrochimico LiFePO4",
+      "kwh_min": 5,
+      "kwh_max": 100,
+      "note": "Standard 15-30 kWh per hotel media, ciclo vita >6.000 a DoD 80%"
+    },
+    {
+      "id": "CER",
+      "label": "Comunità Energetiche Rinnovabili",
+      "decreto_riferimento": "Decreto CER 2024 + integrazioni RAS",
+      "premialità_GSE_anni": 20
+    }
+  ],
+
+  "eligibilità_condizioni_cumulative": [
+    {
+      "id": "sede_operativa_sardegna",
+      "label": "Sede operativa in Sardegna",
+      "note": "La sede legale può essere extra-regionale, purché stabilimento/UP oggetto intervento sia situata in Sardegna e iscritta al Registro Imprese sardo"
+    },
+    {
+      "id": "anzianità_minima",
+      "label": "Anzianità minima 24 mesi",
+      "valore_mesi": 24,
+      "data_riferimento": "data_pubblicazione_bando",
+      "note": "Start-up costituite dopo gennaio 2024 NON eligibili"
+    },
+    {
+      "id": "ATECO_ammissibile",
+      "label": "Codice ATECO ammissibile",
+      "ammessi": ["manifatturiero", "agricolo", "commerciale", "ricettivo", "artigianale", "servizi alle imprese"],
+      "esclusi": ["finanziario", "immobiliare speculativo", "trading energetico"]
+    },
+    {
+      "id": "DURC_regolare",
+      "label": "Regolarità DURC e fiscale",
+      "note": "DURC in corso + nessun debito tributario non rateizzato. Verifica d'ufficio in istruttoria"
+    },
+    {
+      "id": "de_minimis",
+      "label": "Plafond de minimis non saturato",
+      "soglia_eur": 300000,
+      "esercizi_finanziari_anni": 3,
+      "deroga": "regime Energia (Quadro Temporaneo Crisi e Transizione UE)"
+    }
+  ],
+
+  "iter_pratico_step": [
+    {"step": 1, "label": "Audit energetico strumentale", "durata_giorni": "15-20"},
+    {"step": 2, "label": "Acquisizione 3 preventivi alternativi", "durata_giorni": "5-10"},
+    {"step": 3, "label": "Compilazione modulistica SIPES", "durata_giorni": "7-10"},
+    {"step": 4, "label": "Pre-istruttoria automatica", "durata_giorni": "≤30"},
+    {"step": 5, "label": "Decreto di concessione", "finestra_esecutiva_mesi": 18},
+    {"step": 6, "label": "Realizzazione lavori e collaudo", "durata_giorni": "30-60"},
+    {"step": 7, "label": "Rendicontazione e SAL", "saldo_giorni": "≤60"}
+  ],
+
+  "tariffe_riferimento": {
+    "tariffa_elettrica_PMI_eur_kwh": 0.28,
+    "note_tariffa": "Mix F1+F2+F3 IVA esclusa, ricettivo Sardegna NE 2025-2026",
+    "tariffa_SSP_eur_kwh": 0.12,
+    "note_SSP": "Scambio sul Posto medio GSE 2025"
+  },
+
+  "norme_riferimento": [
+    "Programma Operativo FESR Sardegna 2021-2027",
+    "Decreto CER nazionale 2024 + integrazioni RAS",
+    "Norma CEI 0-16 (connessione MT/BT)",
+    "Norma CEI 64-8 Sezione 712 (impianti FV)",
+    "EN 62446 (verifica e collaudo FV)",
+    "DM 37/08 (Dichiarazione di Conformità)",
+    "Reg. UE 517/2014 (F-Gas)",
+    "D.Lgs. 28/2011 (fonti energetiche rinnovabili)"
+  ]
+}
